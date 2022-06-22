@@ -1,0 +1,33 @@
+version: '3'
+services:
+  #  メインで使用するDataBase、好きな命名でよい
+  main-db:
+    # コンテナの名称、好きな命名でよい
+    container_name: main_db
+    # 取り入れたいイメージ、Dockerが用意しているものを指定する。
+    image: postgres:13-alpine
+    # 作成するDBのオーナー名やパスワード、DB名を定義できる。
+    environment:
+      POSTGRES_USER: sample_user
+      POSTGRES_PASSWORD: sample_user
+      POSTGRES_DB: sample_db
+    ports:
+      - 5432:5432
+    volumes:
+        # :の左のフォルダ内にあるSQLファイルをコンテナ生成時に、実行してくれる。
+        - ./sample-backend/doc/database/postgresql/init:/docker-entrypoint-initdb.d
+        # :の左のフォルダを:の右のコンテナ内のフォルダにマウントすることで、DBを永続化することができる。
+        - /usr/local/var/postgres:/var/lib/postgresql/data
+  #  CI用のメインで使用するDataBase
+  main-ci:
+    container_name: main_ci
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: sample_user
+      POSTGRES_PASSWORD: sample_user
+      POSTGRES_DB: sample_db
+    ports:
+      - 15432:5432
+    volumes:
+        - ./sample-backend/doc/database/postgresql/init:/docker-entrypoint-initdb.d
+        - /usr/local/var/postgres:/var/lib/postgresql/data
