@@ -1,1 +1,4 @@
 rootProject.name = 'sample-thymeleaf'
+
+include(":sample-backend")
+project(":sample-backend").projectDir = new File("../sample-backend")

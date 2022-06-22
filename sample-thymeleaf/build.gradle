@@ -39,6 +39,9 @@ dependencies {
     // DataBase
     // Postgresql
     runtimeOnly 'org.postgresql:postgresql'
+
+    // Sub Projects
+    implementation(project(":sample-backend"))
 }
 
 tasks.named('test') {
