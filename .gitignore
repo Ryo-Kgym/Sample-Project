@@ -1,1 +1,4 @@
 /.idea/
+/sample-backend/.gradle/
+/sample-thymeleaf/.gradle/
+/sample-thymeleaf/build/
