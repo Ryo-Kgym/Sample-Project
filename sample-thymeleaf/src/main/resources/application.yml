@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:5432/sample_db
+    username: sample_user
+    password: sample_user
+    driverClassName: org.postgresql.Driver
