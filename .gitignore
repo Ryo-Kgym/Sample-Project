@@ -3,3 +3,5 @@
 /sample-thymeleaf/.gradle/
 /sample-thymeleaf/build/
 /sample-backend/build/
+/sample-core/build/
+/sample-core/.gradle/
