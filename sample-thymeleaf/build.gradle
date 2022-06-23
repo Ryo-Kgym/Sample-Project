@@ -43,6 +43,7 @@ dependencies {
 
     // Sub Projects
     implementation(project(":sample-backend"))
+    implementation(project(":sample-core"))
 }
 
 tasks.named('test') {

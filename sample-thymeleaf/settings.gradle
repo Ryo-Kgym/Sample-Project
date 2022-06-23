@@ -2,3 +2,6 @@ rootProject.name = 'sample-thymeleaf'
 
 include(":sample-backend")
 project(":sample-backend").projectDir = new File("../sample-backend")
+
+include(":sample-core")
+project(":sample-core").projectDir = new File("../sample-core")

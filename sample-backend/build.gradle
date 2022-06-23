@@ -25,7 +25,7 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
 
     // Sub Projects
-//    implementation(project(":sample-core"))
+    implementation(project(":sample-core"))
 }
 
 mybatisGenerator {
